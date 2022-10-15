@@ -12,6 +12,7 @@ T? genericFunction<T extends GenerateObjectFromString>(String s) {
   // Try correcting the name to the name of an existing method, or defining a method named 'fromString'.
   //return T.fromString(s);
   // shouldn't this be compiling & dynamically binding to "T's" static method
+  return null; // to avoid warning
 }
 
 class MyClass1 extends GenerateObjectFromString {
