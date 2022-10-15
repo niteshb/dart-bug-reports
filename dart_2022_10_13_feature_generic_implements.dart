@@ -10,7 +10,7 @@ T? genericFunction<T extends GenerateObjectFromString>(String s) {
   // Compile ERROR: in the following line
   // The method 'fromString' isn't defined for the type 'Type'.
   // Try correcting the name to the name of an existing method, or defining a method named 'fromString'.
-  return T.fromString(s);
+  //return T.fromString(s);
   // shouldn't this be compiling & dynamically binding to "T's" static method
 }
 
