@@ -24,3 +24,8 @@ double whenComplete() {
 handleError(_) {
   print('handleError:: I am in');
 }
+/* Output
+funcThatThrows:: I will throw an Exception
+funcWhenComplete:: Reaches here
+handleError:: I am in
+*/

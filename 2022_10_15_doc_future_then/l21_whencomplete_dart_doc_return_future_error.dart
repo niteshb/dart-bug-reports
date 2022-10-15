@@ -10,10 +10,10 @@ void main() {
       .catchError(handleError);
 }
 
-Future<int> funcThatThrows() {
+Future funcThatThrows() {
   print('funcThatThrows:: I will throw an Exception');
-  throw Exception({'source': 'funcThatThrows', 'throw': false});
-  //return Future.value(5);
+  final error = Exception({'source': 'funcThatThrows', 'throw': false});
+  return Future.error(error);
 }
 
 double whenComplete() {
@@ -25,10 +25,7 @@ handleError(_) {
   print('handleError:: I am in');
 }
 /* Output
-Unhandled exception:
-Exception: {source: funcThatThrows, throw: false}
-#0      funcThatThrows    l21_whencomplete_dart_doc_doesnt_work.dart:15
-#1      main              l21_whencomplete_dart_doc_doesnt_work.dart:2
-#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:297:19)
-#3      _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)
+funcThatThrows:: I will throw an Exception
+funcWhenComplete:: Reaches here
+handleError:: I am in
 */
