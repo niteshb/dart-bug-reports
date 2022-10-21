@@ -95,3 +95,40 @@ class StreamCounter {
   // getter for controllers stream
   Stream<int> get stream => _controller.stream;
 }
+
+/* Output:
+main:: main is done
+subs1 subscribes
+    subs1 got data: 2
+    subs1 got data: 3
+    subs1 got data: 4
+    subs1 got data: 5
+subs2 subscribes
+    subs1 got data: 6
+    subs2 got data: 6
+    subs1 got data: 7
+    subs2 got data: 7
+    subs1 got data: 8
+    subs2 got data: 8
+    subs1 got data: 9
+    subs2 got data: 9
+    subs1 got data: 10
+    subs2 got data: 10
+    subs1 got data: 11
+    subs2 got data: 11
+subs2 cancels its subscription
+    subs1 got data: 12
+    subs1 got data: 13
+    subs1 got data: 14
+    subs1 got data: 15
+    subs1 got data: 16
+    subs1 got data: 17
+subs1 cancels its subscription
+subs3 subscribes
+    subs3 got data: 24
+    subs3 got data: 25
+    subs3 got data: 26
+    subs3 got data: 27
+    subs3 got data: 28
+stream controller closed
+*/
